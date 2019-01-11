@@ -8,7 +8,9 @@
     "url": "git+https://github.com/rbeasse/poe-logger.git"
   },
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "mssql": "^4.3.0"
+    "mssql": "^4.3.0",
+    "nodemon": "^1.18.9"
   }
 }
