@@ -1,0 +1,14 @@
+{
+  "name": "poe-logger",
+  "version": "0.0.1",
+  "description": "Path of Exile item logger",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rbeasse/poe-logger.git"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "mssql": "^4.3.0"
+  }
+}
