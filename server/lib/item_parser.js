@@ -14,6 +14,20 @@ class ItemParser {
                           filter((row) => row.length);
 
       this._parseSimpleAttributes(rows);
+      this._parseSimpleStrings(rows);
+    });
+  }
+
+  _parseSimpleStrings(rows) {
+    let plainTextAttributes = ['Shaper', 'Elder', 'Corrupted'];
+
+    rows.forEach((row) => {
+      // Check to see if our row is one of the plain text attributes in our list, if it
+      // is not then we can skip it
+      if (!plainTextAttributes.includes(row)) { return false; }
+
+      // Add the key and value we found to our item
+      this.item[row] = true
     });
   }
 
