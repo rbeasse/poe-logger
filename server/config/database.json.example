@@ -1,0 +1,10 @@
+{
+  "user":     "SA",
+  "password": "XXXXXXXX",
+  "server":   "111.111.111.111",
+  "database": "PathOfExile",
+
+  "options": {
+      "encrypt": true
+  }
+}
