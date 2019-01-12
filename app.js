@@ -1,7 +1,7 @@
 const express    = require('express');
 const db         = require('./lib/db');
 const bodyParser = require('body-parser');
-const parser     = require('./lib/parser/parser');
+const ItemParser = require('./lib/item_parser');
 
 let app = express();
 
@@ -21,9 +21,9 @@ app.post('/api/add_item', (req, res) => {
 
   // Run the item through our item parser to convert it to a more
   // useable format
-  parsedItem = parser.parseItem(itemString);
+  parsedItem = new ItemParser(itemString);
 
-  res.send({ item: parsedItem });
+  res.send({ item: parsedItem.item });
 })
 
 db.connect();
