@@ -5,9 +5,11 @@ class ItemsController < ApplicationController
 
   def create
     item = Item.new
-    item.build_from_string(params[:item_string])
-    item.save
 
-    render json: item.inspect
+    if item.save_from_string(params[:item_string])
+      render json: 'Success'
+    else
+      render json: 'Failed to parse item', status: 400
+    end
   end
 end

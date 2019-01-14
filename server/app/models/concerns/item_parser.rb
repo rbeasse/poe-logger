@@ -7,7 +7,9 @@ module ItemParser
 
   # Accepcts a formatted Path Of Exile item string and parses out
   # the attributes in to our model
-  def build_from_string(item_string)
+  def save_from_string(item_string)
+    return if item_string.blank?
+
     fragments = item_string.split(SEPERATOR)
 
     fragments.each do |fragment|
@@ -17,6 +19,10 @@ module ItemParser
       parse_boolean_attributes(rows)
       parse_modifiers(rows)
     end
+
+    # We know that Rarity will always be set - as it's in every valid item string. If
+    # it is not, then we can assume the parse failed
+    self.Rarity.present? && save
   end
 
   private
