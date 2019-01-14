@@ -1,2 +1,5 @@
-node_modules
-database.json
+server/log
+server/tmp
+server/spec/tmp
+
+master.key
